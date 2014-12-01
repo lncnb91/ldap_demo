@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LdapDemo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
 
-<%= yield %>
+    <%= stylesheet_link_tag "admin", media: "all" %>
+    <%= javascript_include_tag "admin"%>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
 
-</body>
+  <body>
+    <div id="wrap">
+      <%= render 'layouts/header' %>
+      <selection>
+        <% if notice %>
+          <p class="alert alert-notice"><%= notice %></p>
+        <% end %>
+        <div>
+          <%= yield %>
+        </div>
+      </selection>
+    </div><!--/wrap-->
+  <%= yield :bottom %>
+  </body>
 </html>
