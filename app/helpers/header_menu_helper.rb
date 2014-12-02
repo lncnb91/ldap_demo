@@ -9,7 +9,7 @@ module HeaderMenuHelper
       view_log: [
       ],
       admin: [
-        ["admin.sign_out", ->{destroy_admin_session_path}, {}]
+        ["admin.sign_out", ->{admin_path(Admin.first)}, {}]
       ],
     }
   end
